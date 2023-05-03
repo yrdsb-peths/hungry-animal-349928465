@@ -23,4 +23,12 @@ public class MyWorld extends World
         addObject(elephant, 50, 250);
         addObject(apple, 300, 10);
     }
+    
+    public void createApple()
+    {
+        Apple apple2 = new Apple();
+        int x = Greenfoot.getRandomNumber(600);
+        int y = Greenfoot.getRandomNumber(10);
+        addObject(apple2, x, y);
+    }
 }
