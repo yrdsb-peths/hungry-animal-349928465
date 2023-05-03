@@ -8,7 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    public int score = 0;
+    Label scoreboard;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -19,9 +21,18 @@ public class MyWorld extends World
         super(600, 400, 1);
         Elephant elephant = new Elephant();
         Apple apple = new Apple();
+        scoreboard = new Label(0, 50);
         
         addObject(elephant, 50, 250);
         addObject(apple, 300, 10);
+        addObject(scoreboard, 55, 55);
+    }
+    
+    
+    public void increaseScore()
+    {
+        score++;
+        scoreboard.setValue(score);
     }
     
     public void createApple()
