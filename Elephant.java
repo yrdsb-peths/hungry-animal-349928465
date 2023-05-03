@@ -14,7 +14,7 @@ public class Elephant extends Actor
      */
     public void act()
     {
-        move(1);
+        moveAround();
         eat();
     }
     
@@ -25,6 +25,20 @@ public class Elephant extends Actor
             removeTouching(Apple.class);
             MyWorld world = (MyWorld) getWorld();
             world.createApple();
+        }
+    }
+    
+    public void moveAround()
+    {
+        move(2);
+        
+        if (Greenfoot.isKeyDown("A"))
+        {
+            turn(-2);
+        }
+        if (Greenfoot.isKeyDown("D"))
+        {
+            turn(2);
         }
     }
 }
