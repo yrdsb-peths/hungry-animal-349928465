@@ -23,7 +23,7 @@ public class MyWorld extends World
         Apple apple = new Apple();
         scoreboard = new Label(0, 50);
         
-        addObject(elephant, 50, 250);
+        addObject(elephant, 50, 365);
         addObject(apple, 300, 10);
         addObject(scoreboard, 55, 55);
     }

@@ -31,15 +31,13 @@ public class Elephant extends Actor
     
     public void moveAround()
     {
-        move(2);
-        
         if (Greenfoot.isKeyDown("A"))
         {
-            turn(-2);
+            move(-2);
         }
         if (Greenfoot.isKeyDown("D"))
         {
-            turn(2);
+            move(2);
         }
     }
 }
