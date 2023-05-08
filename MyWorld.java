@@ -28,6 +28,11 @@ public class MyWorld extends World
         addObject(scoreboard, 55, 55);
     }
     
+    public void gameOver()
+    {
+        Label gameOverLabel = new Label("Game Over", 100);
+        addObject(gameOverLabel, 300, 200);
+    }
     
     public void increaseScore()
     {
