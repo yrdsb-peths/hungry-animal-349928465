@@ -14,11 +14,29 @@ public class Elephant extends Actor
      */
     
     GreenfootSound elephantSound = new GreenfootSound("elephantnoise.mp3");
+    GreenfootImage[] idle = new GreenfootImage[8];
+    
+    public Elephant()
+    {
+        for (int x = 0; x < idle.length; x++)
+        {
+            idle[x] = new GreenfootImage("images/elephant_idle/idle" + x + ".png");
+        }
+        setImage(idle[0]);
+    }
+    
+    int imageIndex = 0;
+    public void animateElephant()
+    {
+        setImage(idle[imageIndex]);
+        imageIndex = (imageIndex + 1) % idle.length;
+    }
     
     public void act()
     {
         moveAround();
         eat();
+        animateElephant();
     }
     
     public void eat()
