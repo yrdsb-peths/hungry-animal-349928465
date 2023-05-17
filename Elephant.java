@@ -13,6 +13,8 @@ public class Elephant extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
+    SimpleTimer aniTimer = new SimpleTimer();
+    
     GreenfootSound elephantSound = new GreenfootSound("elephantnoise.mp3");
     GreenfootImage[] idleRight = new GreenfootImage[8];
     GreenfootImage[] idleLeft = new GreenfootImage[8];
@@ -33,21 +35,26 @@ public class Elephant extends Actor
             idleLeft[x].mirrorHorizontally();
             idleLeft[x].scale(65, 65);
         }
+        aniTimer.mark();
         setImage(idleRight[0]);
     }
     
     int imageIndex = 0;
     public void animateElephant()
     {
-        if (facing.equals("right"))
-        {
-            setImage(idleRight[imageIndex]);
-            imageIndex = (imageIndex + 1) % idleRight.length;
-        }
-        else
-        {
-            setImage(idleLeft[imageIndex]);
-            imageIndex = (imageIndex + 1) % idleLeft.length;
+        if (aniTimer.millisElapsed() > 50)
+        {  
+            if (facing.equals("right"))
+            {
+                setImage(idleRight[imageIndex]);
+                imageIndex = (imageIndex + 1) % idleRight.length;
+            }
+            else
+            {
+                setImage(idleLeft[imageIndex]);
+                imageIndex = (imageIndex + 1) % idleLeft.length;
+            }
+            aniTimer.mark();
         }
     }
     
