@@ -22,10 +22,12 @@ public class MyWorld extends World
         Elephant elephant = new Elephant();
         Apple apple = new Apple();
         scoreboard = new Label(0, 50);
+        BadApple badApp = new BadApple();
         
         addObject(elephant, 50, 365);
         addObject(apple, 300, 10);
         addObject(scoreboard, 55, 55);
+        addObject(badApp, 150, 10);
     }
     
     public void gameOver()
@@ -40,11 +42,25 @@ public class MyWorld extends World
         scoreboard.setValue(score);
     }
     
+    public void decreaseScore()
+    {
+        score--;
+        scoreboard.setValue(score);
+    }
+    
     public void createApple()
     {
         Apple apple2 = new Apple();
         int x = Greenfoot.getRandomNumber(600);
         int y = Greenfoot.getRandomNumber(10);
         addObject(apple2, x, y);
+    }
+    
+    public void createBadApple()
+    {
+        BadApple apple = new BadApple();
+        int x = Greenfoot.getRandomNumber(600);
+        int y = Greenfoot.getRandomNumber(10);
+        addObject(apple, x, y);
     }
 }

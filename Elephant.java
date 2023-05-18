@@ -75,6 +75,14 @@ public class Elephant extends Actor
             world.increaseScore();
             elephantSound.play();
         }
+        if (isTouching(BadApple.class))
+        {
+            removeTouching(BadApple.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createBadApple();
+            world.decreaseScore();
+            elephantSound.play();
+        }
     }
     
     public void moveAround()
