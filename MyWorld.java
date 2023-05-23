@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    public int score = 0;
+    public static int score = 0;
     Label scoreboard;
     
     /**
@@ -64,5 +64,10 @@ public class MyWorld extends World
         int x = Greenfoot.getRandomNumber(600);
         int y = Greenfoot.getRandomNumber(10);
         addObject(apple, x, y);
+    }
+    
+    public static int getScore()
+    {
+        return score;
     }
 }
