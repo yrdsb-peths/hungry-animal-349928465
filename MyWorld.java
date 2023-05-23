@@ -68,6 +68,8 @@ public class MyWorld extends World
     
     public static int getScore()
     {
-        return score;
+        int prevScore = score;
+        score = 0;
+        return prevScore; 
     }
 }

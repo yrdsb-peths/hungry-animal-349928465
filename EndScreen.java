@@ -20,6 +20,5 @@ public class EndScreen extends World
         super(600, 400, 1); 
         addObject(titleLabel, getWidth()/2, getHeight()/2);
         addObject(scoreLabel, getWidth()/2, getHeight()/2 + 75);
-        
     }
 }
