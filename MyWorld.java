@@ -20,9 +20,9 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1, false);
         Elephant elephant = new Elephant();
-        Apple apple = new Apple();
         scoreboard = new Label(0, 50);
         BadApple badApp = new BadApple();
+        Apple apple = new Apple();
         
         addObject(elephant, 50, 365);
         addObject(apple, 300, 10);
@@ -34,6 +34,8 @@ public class MyWorld extends World
     {
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, 300, 200);
+        EndScreen endWorld = new EndScreen();
+        Greenfoot.setWorld(endWorld);
     }
     
     public void increaseScore()
