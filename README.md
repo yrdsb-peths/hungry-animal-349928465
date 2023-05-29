@@ -12,3 +12,7 @@ This particular repository is the starting template for the Hungry Elephant tuto
 [Part 2: Game Enhancements](https://youtu.be/TwID9i0Ey6o)
 
 [Part 3: Final Touches](https://youtu.be/GT-eFwa4Abc)
+
+Features that I added:
+BadApple - decreases score whenever it is eaten by the elephant
+EndScreen - an end screen which displays the final score of the player
