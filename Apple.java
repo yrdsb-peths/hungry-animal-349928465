@@ -1,16 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Apple here.
+ * An apple that falls and increases score when eaten
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Jimmy Yip 
+ * @version May 29 2023
  */
 public class Apple extends Actor
 {
     /**
-     * Act - do whatever the Apple wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Act - falls from the sky and ends game if it touches the ground
      */
     public void act()
     {

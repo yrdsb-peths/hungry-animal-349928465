@@ -1,26 +1,29 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Elephant here.
+ * The elephant which the user controls
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Jimmy Yip
+ * @version May 29 2023
  */
 public class Elephant extends Actor
 {
-    /**
-     * Act - do whatever the Elephant wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
+    // Create simple timer
     SimpleTimer aniTimer = new SimpleTimer();
     
+    // Load elephant sounds from file
     GreenfootSound elephantSound = new GreenfootSound("elephantnoise.mp3");
+    
+    // Load idle images
     GreenfootImage[] idleRight = new GreenfootImage[8];
     GreenfootImage[] idleLeft = new GreenfootImage[8];
     
     String facing = "right";
     
+    
+    /**
+     * Constructor which initializes idle images and timer
+     */
     public Elephant()
     {
         for (int x = 0; x < idleRight.length; x++)
@@ -40,6 +43,9 @@ public class Elephant extends Actor
     }
     
     int imageIndex = 0;
+    /**
+     * Animates the 8 elephant idle images
+     */
     public void animateElephant()
     {
         if (aniTimer.millisElapsed() > 50)
@@ -58,6 +64,9 @@ public class Elephant extends Actor
         }
     }
     
+    /**
+     * Runs the other methods
+     */
     public void act()
     {
         moveAround();
@@ -65,6 +74,9 @@ public class Elephant extends Actor
         animateElephant();
     }
     
+    /**
+     * Eats the apple and bad apple when it is touching
+     */
     public void eat()
     {
         if (isTouching(Apple.class))
@@ -85,6 +97,9 @@ public class Elephant extends Actor
         }
     }
     
+    /**
+     * Moves the elephant with left and right with 'A' and 'D' keys
+     */
     public void moveAround()
     {
         if (Greenfoot.isKeyDown("A"))
